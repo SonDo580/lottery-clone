@@ -97,4 +97,74 @@ footer {
   .copyright {
     text-align: center;
   }
+
+  @include laptop {
+    text-align: center;
+    padding: 5px 0;
+    font-size: 1.05rem;
+
+    & > h3 {
+      display: block;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .policy {
+      display: none;
+    }
+
+    .connect {
+      h4 {
+        display: none;
+      }
+    }
+
+    .payment {
+      h4 {
+        font-weight: normal;
+      }
+
+      .vnpay {
+        margin: 2px auto;
+      }
+    }
+
+    .customer {
+      margin: 10px 0;
+
+      h4 {
+        display: none;
+      }
+
+      p:nth-of-type(2),
+      p:nth-of-type(3) {
+        display: none;
+      }
+
+      a {
+        color: white;
+      }
+
+      span {
+        display: none;
+      }
+
+      svg {
+        display: inline;
+      }
+    }
+
+    .footer-bottom {
+      h3 {
+        display: none;
+      }
+
+      a {
+        display: none;
+      }
+    }
+  }
 }
