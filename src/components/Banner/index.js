@@ -1,4 +1,5 @@
 import { Images } from "../../images";
+import "./Banner.scss";
 
 function Banner() {
   return (

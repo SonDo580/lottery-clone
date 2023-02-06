@@ -1,0 +1,15 @@
+@import "../../style/style.scss";
+
+section.banner {
+  margin-top: 2px;
+
+  img {
+    width: 100%;
+    aspect-ratio: 5 / 2;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
