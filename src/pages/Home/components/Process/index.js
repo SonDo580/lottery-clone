@@ -1,6 +1,12 @@
+import { Images } from "../../../../images";
+import "./Process.scss";
+
 function Process() {
   return (
-    <section className="process">
+    <section
+      className="process"
+      style={{ backgroundImage: Images.home.process.background }}
+    >
       <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
