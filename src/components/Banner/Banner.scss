@@ -6,10 +6,5 @@ section.banner {
   img {
     width: 100%;
     aspect-ratio: 5 / 2;
-    display: none;
-
-    &.active {
-      display: block;
-    }
   }
 }

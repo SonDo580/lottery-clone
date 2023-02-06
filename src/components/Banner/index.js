@@ -2,27 +2,25 @@ import { useEffect, useState } from "react";
 import { Images } from "../../images";
 import "./Banner.scss";
 
+const banners = [Images.banner.banner1, Images.banner.banner2];
+
 function Banner() {
-  const [active, setActive] = useState(true);
+  const [bannerIndex, setBannerIndex] = useState(0);
 
   useEffect(() => {
     setInterval(() => {
-      setActive((prevActive) => !prevActive);
+      setBannerIndex((prevBannerIndex) => {
+        if (prevBannerIndex === banners.length - 1) {
+          return 0;
+        }
+        return prevBannerIndex + 1;
+      });
     }, 3000);
   }, []);
 
   return (
     <section className="banner">
-      <img
-        className={active ? "active" : ""}
-        src={Images.banner.banner1}
-        alt="banner1"
-      />
-      <img
-        className={active ? "" : "active"}
-        src={Images.banner.banner2}
-        alt="banner2"
-      />
+      <img src={banners[bannerIndex]} alt="banner" />
     </section>
   );
 }
