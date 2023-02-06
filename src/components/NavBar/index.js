@@ -10,7 +10,7 @@ function NavBar() {
         </li>
         <li>
           Play now <FaCaretDown />
-          <div class="list">
+          <div className="list">
             <p>
               <a href="/">Vietlott Keno</a>
             </p>
@@ -27,7 +27,7 @@ function NavBar() {
         </li>
         <li>
           Result <FaCaretDown />
-          <div class="list">
+          <div className="list">
             <p>
               <a href="/">Vietlott Keno</a>
             </p>
