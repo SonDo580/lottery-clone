@@ -1,30 +1,32 @@
+import { Images } from "../../images";
+
 function Header() {
   return (
     <header>
-      <div class="header-left">
+      <div className="header-left">
         <a href="/">
-          <img src="./image/header/logo_onbit_full.gif" alt="onbit-logo" />
+          <img src={Images.header.onbitLogo} alt="onbit logo" />
         </a>
       </div>
 
-      <div class="header-right">
-        <div class="top-line">
+      <div className="header-right">
+        <div className="top-line">
           <input type="text" placeholder="Email or Phone" />
           <input type="password" placeholder="Password" />
-          <button class="login">Log in</button>
-          <button class="signup">Sign up</button>
+          <button className="login">Log in</button>
+          <button className="signup">Sign up</button>
         </div>
         <p>
-          <a href="/">Forget Password</a>
+          <a href="/">Forgot Password</a>
         </p>
-        <div class="bottom-line">
-          <button class="share">Royalty</button>
-          <button class="fb-login">
-            <img src="./image/header/fb-small.png" alt="fb-icon" />
+        <div className="bottom-line">
+          <button className="share">Royalty</button>
+          <button className="fb-login">
+            <img src={Images.header.facebook} alt="fb-icon" />
             Login with Facebook
           </button>
-          <button class="zalo-login">
-            <img src="./image/header/zalo-small.png" alt="zalo-icon" />
+          <button className="zalo-login">
+            <img src={Images.header.zalo} alt="zalo-icon" />
             Login with Zalo
           </button>
         </div>
