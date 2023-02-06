@@ -1,5 +1,6 @@
 import { FaEnvelope, FaPhone } from "react-icons/fa";
 import { Images } from "../../images";
+import "./Footer.scss";
 
 function Footer() {
   return (
@@ -26,6 +27,7 @@ function Footer() {
             </li>
           </ul>
         </div>
+
         <div class="connect">
           <h4>Connect with us</h4>
           <div>
@@ -43,6 +45,7 @@ function Footer() {
             </a>
           </div>
         </div>
+
         <div class="payment">
           <h4>Payment methods</h4>
           <div>
@@ -55,6 +58,7 @@ function Footer() {
             <img src={Images.footer.vnpay} alt="vnpay" />
           </div>
         </div>
+
         <div class="customer">
           <h4>Customer service</h4>
           <p>
@@ -71,6 +75,7 @@ function Footer() {
           </p>
         </div>
       </div>
+
       <div class="footer-bottom">
         <h3>ONBIT VIETNAM COMPANY</h3>
         <p>
