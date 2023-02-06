@@ -1,0 +1,100 @@
+@import "../../style/style.scss";
+
+footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 0 40px;
+  font-size: 0.9rem;
+
+  & > h3 {
+    display: none;
+    font-weight: normal;
+    font-size: 1.2rem;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr 2fr;
+  }
+
+  .policy {
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .connect {
+    img {
+      width: 30px;
+      aspect-ratio: auto;
+    }
+  }
+
+  .payment {
+    img {
+      height: 30px;
+      aspect-ratio: auto;
+    }
+
+    .vnpay {
+      background-color: white;
+      text-align: center;
+      width: 150px;
+      margin-left: 10px;
+      margin-top: 10px;
+      padding: 5px;
+      border-radius: 5px;
+
+      img {
+        height: 40px;
+      }
+    }
+  }
+
+  .customer {
+    p {
+      margin: 0;
+      margin-bottom: 5px;
+    }
+
+    a {
+      color: violet;
+    }
+
+    svg {
+      display: none;
+      color: gray;
+    }
+  }
+
+  .footer-bottom {
+    p {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: white;
+      display: inline-block;
+      width: 100px;
+    }
+  }
+
+  .copyright {
+    text-align: center;
+  }
+}
