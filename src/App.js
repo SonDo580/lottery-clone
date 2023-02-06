@@ -25,7 +25,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/play" element={<Play />} />
-          <Route path="/result" element={<Result />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 
