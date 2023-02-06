@@ -1,3 +1,5 @@
+@import "../../style/style.scss";
+
 .header {
   display: flex;
   align-items: flex-end;
@@ -87,7 +89,7 @@
 
     .bottom-line {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       align-items: center;
     }
 
