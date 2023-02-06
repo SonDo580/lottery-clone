@@ -6,7 +6,7 @@ import MobileMenu from "./components/MobileMenu";
 import "./Header.scss";
 
 function Header() {
-  const zeroToLargeScreen = useMediaQuery({
+  const toLargeScreen = useMediaQuery({
     query: `(max-width: ${Screen.lg})`,
   });
 
@@ -18,9 +18,9 @@ function Header() {
         </a>
       </div>
 
-      {zeroToLargeScreen ? null : <HeaderRight />}
+      {toLargeScreen ? null : <HeaderRight />}
 
-      {zeroToLargeScreen ? <MobileMenu /> : null}
+      {toLargeScreen ? <MobileMenu /> : null}
     </header>
   );
 }

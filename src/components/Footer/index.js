@@ -4,16 +4,16 @@ import { Images } from "../../images";
 import "./Footer.scss";
 
 function Footer() {
-  const zeroToLargeScreen = useMediaQuery({
+  const toLargeScreen = useMediaQuery({
     query: `(max-width: ${Screen.lg})`,
   });
 
   return (
     <footer>
-      {zeroToLargeScreen ? <h3>ONBIT VIETNAM COMPANY</h3> : null}
+      {toLargeScreen ? <h3>ONBIT VIETNAM COMPANY</h3> : null}
 
       <div className="footer-top">
-        {zeroToLargeScreen ? null : (
+        {toLargeScreen ? null : (
           <div className="policy">
             <h4>Our Policy</h4>
             <ul>
@@ -37,7 +37,7 @@ function Footer() {
         )}
 
         <div className="connect">
-          {zeroToLargeScreen ? null : <h4>Connect with us</h4>}
+          {toLargeScreen ? null : <h4>Connect with us</h4>}
 
           <div>
             <a href="https://www.facebook.com/onbit.vn">
@@ -69,25 +69,25 @@ function Footer() {
         </div>
 
         <div className="customer">
-          {zeroToLargeScreen ? null : <h4>Customer service</h4>}
+          {toLargeScreen ? null : <h4>Customer service</h4>}
 
           <p>
-            {zeroToLargeScreen ? <FaPhone /> : <span>Hotline:</span>}
+            {toLargeScreen ? <FaPhone /> : <span>Hotline:</span>}
             <a href="/">0967.401.489</a>
           </p>
 
-          {zeroToLargeScreen ? null : <p>Time: 8:00 - 17:00</p>}
-          {zeroToLargeScreen ? null : <p>All weekdays, include holidays</p>}
+          {toLargeScreen ? null : <p>Time: 8:00 - 17:00</p>}
+          {toLargeScreen ? null : <p>All weekdays, include holidays</p>}
 
           <p>
-            {zeroToLargeScreen ? <FaEnvelope /> : <span>Supported email:</span>}
+            {toLargeScreen ? <FaEnvelope /> : <span>Supported email:</span>}
             <a href="/">support@onbit.vn</a>
           </p>
         </div>
       </div>
 
       <div className="footer-bottom">
-        {zeroToLargeScreen ? <h3>ONBIT VIETNAM COMPANY</h3> : null}
+        {toLargeScreen ? <h3>ONBIT VIETNAM COMPANY</h3> : null}
 
         <p>
           <a href="/">Intro</a>CBR: 0315283217, granted by HCMC D.P.I

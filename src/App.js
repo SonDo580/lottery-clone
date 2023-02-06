@@ -7,14 +7,14 @@ import NavBar from "./components/NavBar";
 import { Screen } from "./style/screen";
 
 function App() {
-  const zeroToLargeScreen = useMediaQuery({
+  const toLargeScreen = useMediaQuery({
     query: `(max-width: ${Screen.lg})`,
   });
 
   return (
     <div className="app">
       <Header />
-      {zeroToLargeScreen ? null : <NavBar />}
+      {toLargeScreen ? null : <NavBar />}
 
       <Footer />
       <Chat />
