@@ -1,0 +1,107 @@
+.header {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  width: 100%;
+
+  button {
+    height: 40px;
+    border: none;
+    font-weight: bold;
+    color: white;
+
+    &.login {
+      background-color: red;
+      padding: 5px 15px;
+      &:hover {
+        background-color: gainsboro;
+        color: black;
+      }
+    }
+
+    &.signup {
+      background-color: yellow;
+      color: black;
+      padding: 5px 15px;
+
+      &:hover {
+        background-color: gainsboro;
+      }
+    }
+
+    &.fb-login {
+      background-color: darkorchid;
+      margin-right: 5px;
+      border-radius: 5px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: blue;
+      }
+    }
+
+    &.zalo-login {
+      background-color: violet;
+      border-radius: 5px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: cornflowerblue;
+      }
+    }
+
+    img {
+      width: 30px;
+      aspect-ratio: 1 / 1;
+      margin-right: 5px;
+    }
+  }
+
+  &-left {
+    flex: 1;
+
+    img {
+      width: 250px;
+      aspect-ratio: auto;
+    }
+  }
+
+  &-right {
+    flex: 2;
+    text-align: right;
+
+    & > p {
+      margin-top: 5px;
+    }
+
+    input {
+      height: 25px;
+      padding: 5px;
+    }
+
+    .bottom-line {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+    }
+
+    button.share {
+      background-color: lightcoral;
+      font-size: 1.05rem;
+      margin-right: 30px;
+      border-radius: 30px;
+      padding: 0 10px;
+      height: 30px;
+
+      &:hover {
+        background-color: green;
+      }
+    }
+  }
+}
