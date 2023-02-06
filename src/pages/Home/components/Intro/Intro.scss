@@ -1,0 +1,52 @@
+@import "../../../../style/style.scss";
+
+section.intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 20px;
+
+  .left {
+    padding-right: 20px;
+
+    .card {
+      display: grid;
+      grid-template-columns: 2fr 5fr;
+      align-items: center;
+      padding-bottom: 20px;
+    }
+
+    .card-img {
+      padding: 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .card-text {
+      font-size: 1.05rem;
+
+      img {
+        width: 40px;
+        margin-right: 10px;
+      }
+
+      a {
+        display: flex;
+        width: max-content;
+        align-items: center;
+        text-decoration: none;
+        font-style: italic;
+        font-weight: 500;
+        color: blueviolet;
+      }
+    }
+  }
+
+  @include laptop {
+    .left {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

@@ -1,7 +1,13 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 import { Images } from "../../../../images";
+import "./Intro.scss";
 
-function index() {
+function Intro() {
+  const toLargeScreen = useMediaQuery({
+    query: `(max-width: ${Screen.lg})`,
+  });
+
   return (
     <section className="intro">
       <div className="left">
@@ -40,19 +46,21 @@ function index() {
         </div>
       </div>
 
-      <div className="right">
-        <iframe
-          width="500"
-          height="300"
-          src="https://www.youtube.com/embed/nltt3i5X7FU"
-          title="Onbit.vn"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
+      {toLargeScreen ? null : (
+        <div className="right">
+          <iframe
+            width="500"
+            height="300"
+            src="https://www.youtube.com/embed/nltt3i5X7FU"
+            title="Onbit.vn"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      )}
     </section>
   );
 }
 
-export default index;
+export default Intro;
