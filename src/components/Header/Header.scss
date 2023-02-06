@@ -1,6 +1,6 @@
 @import "../../style/style.scss";
 
-.header {
+header {
   display: flex;
   align-items: flex-end;
   position: relative;
@@ -69,7 +69,7 @@
     }
   }
 
-  &-left {
+  .header-left {
     flex: 1;
 
     img {
@@ -78,7 +78,7 @@
     }
   }
 
-  &-right {
+  .header-right {
     flex: 2;
     text-align: right;
 
