@@ -1,4 +1,5 @@
 import Lottery from "./components/Lottery";
+import Number from "./components/Number";
 import Ticket from "./components/Ticket";
 
 function Play() {
@@ -6,25 +7,7 @@ function Play() {
     <>
       <Lottery />
       <Ticket />
-
-      <div className="chooseNumber">
-        <h2>
-          <span>Bước 2:</span> Chọn dãy số may mắn
-        </h2>
-        <p className="note">
-          *Với ô TC, vé sẽ được chọn ngẫu nhiên bằng máy Vietlott, với phí tính
-          thêm chỉ 500đ/vé.
-        </p>
-        <div className="buttonsAll">
-          <button className="choose" data-function="quickPickAll">
-            Chọn nhanh
-          </button>
-          <button className="reset" data-function="resetAll">
-            <i className="fa-solid fa-trash"></i>
-          </button>
-        </div>
-        <div className="cards"></div>
-      </div>
+      <Number />
 
       <div className="chooseMode">
         <h2>
