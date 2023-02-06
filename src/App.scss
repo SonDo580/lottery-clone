@@ -7,23 +7,17 @@
   button:hover {
     cursor: pointer;
   }
-}
 
-@media screen and (max-width: $xl) {
-  .app {
+  @include desktop {
     padding: 0 70px;
     margin: 0;
   }
-}
 
-@media screen and (max-width: $lg) {
-  .app {
+  @include laptop {
     padding: 0 50px;
   }
-}
 
-@media screen and (max-width: $sm) {
-  .app {
+  @include mobile {
     padding: 0;
     margin: 0;
   }
