@@ -119,10 +119,6 @@
     background-color: white;
     box-shadow: 0 0 2px gray;
 
-    &-right {
-      display: none;
-    }
-
     &-left {
       img {
         width: 200px;
@@ -141,8 +137,6 @@
 }
 
 .show-menu {
-  display: none;
-
   @include laptop {
     display: flex;
     flex-direction: column;
@@ -161,8 +155,6 @@
 }
 
 .mobile-menu {
-  display: none;
-
   @include laptop {
     display: block;
     position: fixed;
