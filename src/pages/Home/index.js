@@ -1,11 +1,17 @@
+import { useMediaQuery } from "react-responsive";
 import Banner from "../../components/Banner";
+import { Screen } from "../../style/screen";
 import Contact from "./components/Contact";
 
 function Home() {
+  const toMobileScreen = useMediaQuery({
+    query: `(max-width: ${Screen.sm})`,
+  });
+
   return (
     <div>
       <Banner />
-      <Contact />
+      {toMobileScreen ? <Contact /> : null}
     </div>
   );
 }
