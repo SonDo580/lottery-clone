@@ -12,5 +12,8 @@
 
 - ReactJS
 - React Router
-- Owl Carousel
 - Sass
+
+# Note
+
+- Only implement Home and Play route
