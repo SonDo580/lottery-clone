@@ -1,0 +1,33 @@
+section.contact {
+  @include mobile {
+    display: block;
+
+    h1 {
+      text-align: center;
+      font-weight: normal;
+    }
+
+    .contact-info {
+      padding: 0 20px;
+    }
+
+    p {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+
+      i {
+        color: gray;
+      }
+
+      a {
+        color: black;
+      }
+    }
+
+    #map {
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+}
