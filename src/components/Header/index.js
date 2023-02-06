@@ -23,12 +23,12 @@ function Header() {
         </p>
         <div className="bottom-line">
           <button className="share">Royalty</button>
-          <button className="facebook-login">
-            <img src={Images.header.facebook} alt="fb-icon" />
+          <button className="fb-login">
+            <img src={Images.header.facebook} alt="facebook icon" />
             Login with Facebook
           </button>
           <button className="zalo-login">
-            <img src={Images.header.zalo} alt="zalo-icon" />
+            <img src={Images.header.zalo} alt="zalo icon" />
             Login with Zalo
           </button>
         </div>
