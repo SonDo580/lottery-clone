@@ -1,24 +1,11 @@
 import Lottery from "./components/Lottery";
+import Ticket from "./components/Ticket";
 
 function Play() {
   return (
     <>
       <Lottery />
-
-      <div className="chooseTicket">
-        <h2>
-          <span>Bước 1:</span> Chọn số lượng vé
-        </h2>
-        <ul>
-          <li data-num="1">1 vé</li>
-          <li data-num="3" className="active">
-            3 vé
-          </li>
-          <li data-num="5">5 vé</li>
-          <li data-num="10">10 vé</li>
-          <li data-num="15">15 vé</li>
-        </ul>
-      </div>
+      <Ticket />
 
       <div className="chooseNumber">
         <h2>
