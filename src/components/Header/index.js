@@ -11,7 +11,7 @@ function Header() {
   });
 
   return (
-    <header className="header">
+    <header>
       <div className="header-left">
         <a href="/">
           <img src={Images.header.onbitLogo} alt="onbit logo" />
