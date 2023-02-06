@@ -1,7 +1,7 @@
 import { useMediaQuery } from "react-responsive";
 import { Images } from "../../images";
 import { Screen } from "../../style/screen";
-import MobileMenu from "./MobileMenu";
+import MobileMenu from "./components/MobileMenu";
 import "./Header.scss";
 
 function Header() {
