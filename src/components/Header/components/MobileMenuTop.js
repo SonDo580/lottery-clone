@@ -1,19 +1,24 @@
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import { Images } from "../../../images";
 
 function MobileMenuTop(props) {
   const { closeMobileMenu } = props;
 
+  const disabledLink = { pointerEvents: "none" };
+
   return (
     <div className="top">
       <div className="logo">
-        <a href="/">
+        <Link to="/">
           <img src={Images.header.onbitLogo} alt="onbit logo" />
-        </a>
+        </Link>
+
         <span className="close-menu" onClick={closeMobileMenu}>
           <AiOutlineCloseCircle />
         </span>
       </div>
+
       <div className="buttons">
         <button className="login">Log in</button>
         <button className="signup">Sign up</button>
@@ -27,7 +32,9 @@ function MobileMenuTop(props) {
         </button>
       </div>
       <p>
-        <a href="/">Forgot Password</a>
+        <a href="/" style={disabledLink}>
+          Forgot Password
+        </a>
       </p>
     </div>
   );

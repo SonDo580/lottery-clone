@@ -1,6 +1,8 @@
 import { Images } from "../../../images";
 
 function HeaderRight() {
+  const disabledLink = { pointerEvents: "none" };
+
   return (
     <div className="header-right">
       <div className="top-line">
@@ -10,7 +12,9 @@ function HeaderRight() {
         <button className="signup">Sign up</button>
       </div>
       <p>
-        <a href="/">Forgot Password</a>
+        <a href="/" style={disabledLink}>
+          Forgot Password
+        </a>
       </p>
       <div className="bottom-line">
         <button className="share">Sharing Royalty</button>
