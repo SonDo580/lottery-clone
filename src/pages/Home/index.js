@@ -15,7 +15,7 @@ function Home() {
     <div>
       <Banner />
       <Process />
-      <Intro />
+      {toMobileScreen ? null : <Intro />}
       <Feature />
       {toMobileScreen ? <Contact /> : null}
     </div>
