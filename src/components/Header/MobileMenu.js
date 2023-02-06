@@ -22,7 +22,7 @@ function MobileMenu() {
           <div className="top">
             <div className="logo">
               <a href="/">
-                <img src={Images.header.onbitLogo} alt="onbit-logo" />
+                <img src={Images.header.onbitLogo} alt="onbit logo" />
               </a>
               <span className="close-menu">
                 <AiOutlineCloseCircle />
@@ -32,11 +32,11 @@ function MobileMenu() {
               <button className="login">Log in</button>
               <button className="signup">Sign up</button>
               <button className="fb-login">
-                <img src={Images.header.facebook} alt="facebook-icon" />
+                <img src={Images.header.facebook} alt="facebook icon" />
                 Facebook
               </button>
               <button className="zalo-login">
-                <img src={Images.header.zalo} alt="zalo-icon" />
+                <img src={Images.header.zalo} alt="zalo icon" />
                 Zalo
               </button>
             </div>
