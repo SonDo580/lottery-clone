@@ -1,15 +1,9 @@
+import Lottery from "./components/Lottery";
+
 function Play() {
   return (
     <>
-      <div className="lottery">
-        <div className="img">
-          <img src="./image/play/euromillions.png" alt="euromillions" />
-        </div>
-        <p className="time">
-          Còn lại <span>2:03:05</span>
-        </p>
-        <p className="prize">174,000,000 EUR</p>
-      </div>
+      <Lottery />
 
       <div className="chooseTicket">
         <h2>
