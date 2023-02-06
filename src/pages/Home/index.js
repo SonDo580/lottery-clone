@@ -12,13 +12,13 @@ function Home() {
   });
 
   return (
-    <div>
+    <>
       <Banner />
       <Process />
       {toMobileScreen ? null : <Intro />}
       <Feature />
       {toMobileScreen ? <Contact /> : null}
-    </div>
+    </>
   );
 }
 
