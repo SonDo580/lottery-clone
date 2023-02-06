@@ -1,5 +1,6 @@
 import { useMediaQuery } from "react-responsive";
 import "./App.scss";
+import Chat from "./components/Chat";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
@@ -16,6 +17,7 @@ function App() {
       {zeroToLargeScreen ? null : <NavBar />}
 
       <Footer />
+      <Chat />
     </div>
   );
 }
