@@ -1,35 +1,44 @@
 import { FaEnvelope, FaPhone } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 import { Images } from "../../images";
 import "./Footer.scss";
 
 function Footer() {
+  const zeroToLargeScreen = useMediaQuery({
+    query: `(max-width: ${Screen.lg})`,
+  });
+
   return (
     <footer>
-      <h3>ONBIT VIETNAM COMPANY</h3>
-      <div class="footer-top">
-        <div class="policy">
-          <h4>Our Policy</h4>
-          <ul>
-            <li>
-              <a href="/">General Policy</a>
-            </li>
-            <li>
-              <a href="/">Transaction Policy</a>
-            </li>
-            <li>
-              <a href="/">Payment methods</a>
-            </li>
-            <li>
-              <a href="/">Security Policy</a>
-            </li>
-            <li>
-              <a href="/">FAQ</a>
-            </li>
-          </ul>
-        </div>
+      {zeroToLargeScreen ? <h3>ONBIT VIETNAM COMPANY</h3> : null}
 
-        <div class="connect">
-          <h4>Connect with us</h4>
+      <div className="footer-top">
+        {zeroToLargeScreen ? null : (
+          <div className="policy">
+            <h4>Our Policy</h4>
+            <ul>
+              <li>
+                <a href="/">General Policy</a>
+              </li>
+              <li>
+                <a href="/">Transaction Policy</a>
+              </li>
+              <li>
+                <a href="/">Payment methods</a>
+              </li>
+              <li>
+                <a href="/">Security Policy</a>
+              </li>
+              <li>
+                <a href="/">FAQ</a>
+              </li>
+            </ul>
+          </div>
+        )}
+
+        <div className="connect">
+          {zeroToLargeScreen ? null : <h4>Connect with us</h4>}
+
           <div>
             <a href="https://www.facebook.com/onbit.vn">
               <img src={Images.footer.facebook} alt="facebook icon" />
@@ -46,7 +55,7 @@ function Footer() {
           </div>
         </div>
 
-        <div class="payment">
+        <div className="payment">
           <h4>Payment methods</h4>
           <div>
             <img src={Images.footer.atmCard} alt="atm card" />
@@ -54,30 +63,32 @@ function Footer() {
             <img src={Images.footer.masterCard} alt="master card" />
             <img src={Images.footer.momo} alt="momo" />
           </div>
-          <div class="vnpay">
+          <div className="vnpay">
             <img src={Images.footer.vnpay} alt="vnpay" />
           </div>
         </div>
 
-        <div class="customer">
-          <h4>Customer service</h4>
+        <div className="customer">
+          {zeroToLargeScreen ? null : <h4>Customer service</h4>}
+
           <p>
-            <span>Hotline:</span>
-            <FaPhone />
+            {zeroToLargeScreen ? <FaPhone /> : <span>Hotline:</span>}
             <a href="/">0967.401.489</a>
           </p>
-          <p>Time: 8:00 - 17:00</p>
-          <p>(All weekdays, include holidays)</p>
+
+          {zeroToLargeScreen ? null : <p>Time: 8:00 - 17:00</p>}
+          {zeroToLargeScreen ? null : <p>All weekdays, include holidays</p>}
+
           <p>
-            <span>Supported email:</span>
-            <FaEnvelope />
+            {zeroToLargeScreen ? <FaEnvelope /> : <span>Supported email:</span>}
             <a href="/">support@onbit.vn</a>
           </p>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <h3>ONBIT VIETNAM COMPANY</h3>
+      <div className="footer-bottom">
+        {zeroToLargeScreen ? <h3>ONBIT VIETNAM COMPANY</h3> : null}
+
         <p>
           <a href="/">Intro</a>CBR: 0315283217, granted by HCMC D.P.I
         </p>
@@ -85,7 +96,9 @@ function Footer() {
           <a href="/">Contact</a>Address: Lorem ipsum dolor sit amet,
           consectetur adipisicing elit
         </p>
-        <p class="copyright">Copyright © 2021 Onbit VN. All rights reserved.</p>
+        <p className="copyright">
+          Copyright © 2021 Onbit VN. All rights reserved.
+        </p>
       </div>
     </footer>
   );

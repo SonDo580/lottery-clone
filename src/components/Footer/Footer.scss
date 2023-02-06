@@ -7,7 +7,6 @@ footer {
   font-size: 0.9rem;
 
   & > h3 {
-    display: none;
     font-weight: normal;
     font-size: 1.2rem;
   }
@@ -76,7 +75,6 @@ footer {
     }
 
     svg {
-      display: none;
       color: gray;
     }
   }
@@ -103,23 +101,9 @@ footer {
     padding: 5px 0;
     font-size: 1.05rem;
 
-    & > h3 {
-      display: block;
-    }
-
     .footer-top {
       display: flex;
       flex-direction: column;
-    }
-
-    .policy {
-      display: none;
-    }
-
-    .connect {
-      h4 {
-        display: none;
-      }
     }
 
     .payment {
@@ -135,21 +119,8 @@ footer {
     .customer {
       margin: 10px 0;
 
-      h4 {
-        display: none;
-      }
-
-      p:nth-of-type(2),
-      p:nth-of-type(3) {
-        display: none;
-      }
-
       a {
         color: white;
-      }
-
-      span {
-        display: none;
       }
 
       svg {
@@ -158,10 +129,6 @@ footer {
     }
 
     .footer-bottom {
-      h3 {
-        display: none;
-      }
-
       a {
         display: none;
       }
