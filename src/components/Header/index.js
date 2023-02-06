@@ -1,9 +1,10 @@
 import { Images } from "../../images";
 import MobileMenu from "./MobileMenu";
+import "./Header.scss";
 
 function Header() {
   return (
-    <header>
+    <header className="header">
       <div className="header-left">
         <a href="/">
           <img src={Images.header.onbitLogo} alt="onbit logo" />
