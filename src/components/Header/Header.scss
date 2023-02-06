@@ -71,6 +71,15 @@
     img {
       width: 250px;
       aspect-ratio: auto;
+
+      @include laptop {
+        width: 200px;
+        margin-left: 5px;
+      }
+
+      @include mobile {
+        width: 40%;
+      }
     }
   }
 
@@ -105,6 +114,19 @@
         background-color: green;
       }
     }
+
+    @include laptop {
+      display: none;
+    }
+  }
+
+  @include laptop {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 0 2px gray;
   }
 }
 
@@ -114,25 +136,6 @@
 }
 
 @media screen and (max-width: $lg) {
-  // HEADER
-  header {
-    position: sticky;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 0 2px gray;
-  }
-
-  .header-left img {
-    width: 200px;
-    margin-left: 5px;
-  }
-
-  .header-right {
-    display: none;
-  }
-
   /* MOBILE MENU */
   .show-menu {
     display: flex;
@@ -274,11 +277,6 @@
 }
 
 @media screen and (max-width: $sm) {
-  /* HEADER */
-  .header-left img {
-    width: 40%;
-  }
-
   /* MOBILE MENU */
   .show-menu {
     margin-right: 0;
