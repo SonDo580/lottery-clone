@@ -1,13 +1,5 @@
 import { Images } from "../../images";
-import {
-  FaBars,
-  FaCashRegister,
-  FaGift,
-  FaHouseUser,
-  FaMoneyBill,
-  FaScroll,
-} from "react-icons/fa";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import MobileMenu from "./MobileMenu";
 
 function Header() {
   return (
@@ -41,73 +33,7 @@ function Header() {
         </div>
       </div>
 
-      <div class="show-menu">
-        <span>MENU</span>
-        <FaBars />
-      </div>
-
-      <div class="mobile-menu">
-        <div class="wrapper">
-          <div class="top">
-            <div class="logo">
-              <a href="/">
-                <img
-                  src="./image/header/logo_onbit_full.gif"
-                  alt="onbit-logo"
-                />
-              </a>
-              <span class="close-menu">
-                <AiOutlineCloseCircle />
-              </span>
-            </div>
-            <div class="buttons">
-              <button class="login">Log in</button>
-              <button class="signup">Sign up</button>
-              <button class="fb-login">
-                <img src="./image/header/fb-small.png" alt="fb-icon" />
-                Facebook
-              </button>
-              <button class="zalo-login">
-                <img src="./image/header/zalo-small.png" alt="zalo-icon" />
-                Zalo
-              </button>
-            </div>
-            <p>
-              <a href="/">Forgot Password</a>
-            </p>
-          </div>
-          <ul>
-            <li>
-              <a href="/">
-                <FaHouseUser /> Home
-              </a>
-            </li>
-            <li>
-              <a href="/">
-                <FaCashRegister /> Winners
-              </a>
-            </li>
-            <li>
-              <a href="/">
-                <FaGift /> News and Events
-              </a>
-            </li>
-            <li>
-              <a href="/">
-                <FaScroll /> Policies
-              </a>
-            </li>
-            <li>
-              <a href="/">
-                <FaMoneyBill /> Royalty
-                <p>
-                  Attractive royalty - Introduce Onbit to friends and family
-                </p>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <MobileMenu />
     </header>
   );
 }
