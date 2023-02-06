@@ -1,4 +1,13 @@
 import { Images } from "../../images";
+import {
+  FaBars,
+  FaCashRegister,
+  FaGift,
+  FaHouseUser,
+  FaMoneyBill,
+  FaScroll,
+} from "react-icons/fa";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 function Header() {
   return (
@@ -34,7 +43,7 @@ function Header() {
 
       <div class="show-menu">
         <span>MENU</span>
-        <i class="fa-solid fa-bars"></i>
+        <FaBars />
       </div>
 
       <div class="mobile-menu">
@@ -48,7 +57,7 @@ function Header() {
                 />
               </a>
               <span class="close-menu">
-                <i class="fa-regular fa-circle-xmark"></i>
+                <AiOutlineCloseCircle />
               </span>
             </div>
             <div class="buttons">
@@ -70,27 +79,27 @@ function Header() {
           <ul>
             <li>
               <a href="/">
-                <i class="fa-solid fa-house-chimney"></i> Home
+                <FaHouseUser /> Home
               </a>
             </li>
             <li>
               <a href="/">
-                <i class="fa-solid fa-cash-register"></i> Winners
+                <FaCashRegister /> Winners
               </a>
             </li>
             <li>
               <a href="/">
-                <i class="fa-solid fa-gift"></i> News and Events
+                <FaGift /> News and Events
               </a>
             </li>
             <li>
               <a href="/">
-                <i class="fa-solid fa-scroll"></i> Policies
+                <FaScroll /> Policies
               </a>
             </li>
             <li>
               <a href="/">
-                <i class="fa-solid fa-money-bill"></i> Royalty
+                <FaMoneyBill /> Royalty
                 <p>
                   Attractive royalty - Introduce Onbit to friends and family
                 </p>
