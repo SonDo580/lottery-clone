@@ -1,0 +1,50 @@
+section.feature {
+  text-align: center;
+
+  h1 {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-weight: normal;
+    margin-top: 15px;
+
+    span {
+      color: red;
+    }
+  }
+
+  & > p {
+    border: 5px dotted orange;
+    padding: 10px;
+    font-size: 1.3rem;
+
+    a {
+      text-decoration: none;
+      color: blueviolet;
+
+      &:hover {
+        color: orange;
+      }
+    }
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: baseline;
+  }
+
+  .card {
+    padding: 10px;
+    font-size: 1.1rem;
+
+    img {
+      width: 75%;
+    }
+
+    p {
+      padding: 10px;
+    }
+  }
+}

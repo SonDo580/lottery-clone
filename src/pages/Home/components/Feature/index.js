@@ -1,5 +1,6 @@
 import React from "react";
 import { Images } from "../../../../images";
+import "./Feature.scss";
 
 function Feature() {
   return (
