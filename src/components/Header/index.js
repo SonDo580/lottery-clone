@@ -1,8 +1,14 @@
+import { useMediaQuery } from "react-responsive";
 import { Images } from "../../images";
+import { Screen } from "../../style/screen";
 import MobileMenu from "./MobileMenu";
 import "./Header.scss";
 
 function Header() {
+  const isLargeScreen = useMediaQuery({
+    query: `(max-width: ${Screen.lg})`,
+  });
+
   return (
     <header className="header">
       <div className="header-left">
@@ -34,7 +40,7 @@ function Header() {
         </div>
       </div>
 
-      <MobileMenu />
+      {isLargeScreen ? <MobileMenu /> : null}
     </header>
   );
 }
