@@ -6,6 +6,7 @@
 # Features
 
 - Responsive layout
+- Animation
 
 # Technology
 
