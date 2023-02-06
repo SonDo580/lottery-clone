@@ -17,6 +17,10 @@ function MobileMenu() {
     setShow(true);
   };
 
+  const closeMobileMenu = () => {
+    setShow(false);
+  };
+
   return (
     <>
       <div className="show-menu" onClick={showMobileMenu}>
@@ -31,7 +35,7 @@ function MobileMenu() {
               <a href="/">
                 <img src={Images.header.onbitLogo} alt="onbit logo" />
               </a>
-              <span className="close-menu">
+              <span className="close-menu" onClick={closeMobileMenu}>
                 <AiOutlineCloseCircle />
               </span>
             </div>
