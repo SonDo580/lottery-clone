@@ -2,6 +2,7 @@ import { useMediaQuery } from "react-responsive";
 import Banner from "../../components/Banner";
 import { Screen } from "../../style/screen";
 import Contact from "./components/Contact";
+import Feature from "./components/Feature";
 
 function Home() {
   const toMobileScreen = useMediaQuery({
@@ -11,6 +12,7 @@ function Home() {
   return (
     <div>
       <Banner />
+      <Feature />
       {toMobileScreen ? <Contact /> : null}
     </div>
   );
