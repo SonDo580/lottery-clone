@@ -43,6 +43,10 @@
       &:hover {
         background-color: blue;
       }
+
+      @include laptop {
+        margin-right: 0;
+      }
     }
 
     &.zalo-login {
@@ -71,15 +75,6 @@
     img {
       width: 250px;
       aspect-ratio: auto;
-
-      @include laptop {
-        width: 200px;
-        margin-left: 5px;
-      }
-
-      @include mobile {
-        width: 40%;
-      }
     }
   }
 
@@ -114,10 +109,6 @@
         background-color: green;
       }
     }
-
-    @include laptop {
-      display: none;
-    }
   }
 
   @include laptop {
@@ -127,37 +118,52 @@
     left: 0;
     background-color: white;
     box-shadow: 0 0 2px gray;
+
+    &-right {
+      display: none;
+    }
+
+    &-left {
+      img {
+        width: 200px;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  @include mobile {
+    &-left {
+      img {
+        width: 40%;
+      }
+    }
   }
 }
 
-.show-menu,
-.mobile-menu {
+.show-menu {
   display: none;
-}
 
-@media screen and (max-width: $lg) {
-  /* MOBILE MENU */
-  .show-menu {
+  @include laptop {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 5px;
     margin-right: 10px;
+
+    svg {
+      font-size: 2.5rem;
+    }
   }
 
-  .show-menu:active {
-    background-color: cyan;
-  }
-
-  .show-menu i {
-    font-size: 2.5rem;
-  }
-
-  header button.fb-login {
+  @include mobile {
     margin-right: 0;
   }
+}
 
-  .mobile-menu {
+.mobile-menu {
+  display: none;
+
+  @include laptop {
     display: block;
     position: fixed;
     top: 0;
@@ -168,125 +174,102 @@
     font-size: 1.2rem;
     transform: translateX(-100%);
     transition: transform 0.3s, background-color 0.3s step-end;
+
+    &.show {
+      transform: translateX(0);
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .wrapper {
+      background-color: white;
+      width: 450px;
+      height: 100%;
+    }
+
+    .top {
+      height: 40%;
+
+      & > p {
+        padding: 0 20px;
+        margin-top: 10px;
+
+        a {
+          color: red;
+        }
+      }
+    }
+
+    .logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      img {
+        width: 200px;
+        aspect-ratio: auto;
+      }
+    }
+
+    .close-menu {
+      display: block;
+      padding: 5px;
+      font-size: 2rem;
+      color: darkgreen;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+      padding: 10px 20px 0;
+    }
+
+    button {
+      font-size: 1.2rem;
+      font-weight: normal;
+
+      &.fb-login,
+      &.zalo-login {
+        grid-column: 1 / -1;
+      }
+    }
+
+    ul {
+      background-color: black;
+      height: 60%;
+      padding-left: 0;
+
+      li {
+        border-bottom: 1px solid grey;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        padding: 10px;
+
+        p {
+          font-size: 0.9rem;
+        }
+
+        svg {
+          color: red;
+          margin-right: 5px;
+        }
+      }
+    }
   }
 
-  .mobile-menu.show {
-    transform: translateX(0);
-    background-color: rgba(0, 0, 0, 0.3);
-  }
+  @include mobile {
+    .wrapper {
+      width: 80%;
+    }
 
-  .mobile-menu .wrapper {
-    background-color: white;
-    width: 450px;
-    height: 100%;
-  }
-
-  .mobile-menu .top {
-    height: 40%;
-  }
-
-  .mobile-menu .logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .mobile-menu .logo img {
-    width: 200px;
-    aspect-ratio: auto;
-  }
-
-  .mobile-menu .logo a:active {
-    background: none;
-  }
-
-  .mobile-menu .logo img:active {
-    background-color: cyan;
-  }
-
-  .mobile-menu .close-menu {
-    display: block;
-    padding: 5px;
-    font-size: 2rem;
-    color: darkgreen;
-  }
-
-  .mobile-menu .close-menu:active {
-    background-color: cyan;
-  }
-
-  .mobile-menu .buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
-    padding: 10px 20px 0;
-  }
-
-  .mobile-menu button {
-    font-size: 1.2rem;
-    font-weight: normal;
-  }
-
-  .mobile-menu button.fb-login,
-  .mobile-menu button.zalo-login {
-    grid-column: 1 / -1;
-  }
-
-  .mobile-menu .top > p {
-    padding: 0 20px;
-    margin-top: 10px;
-  }
-
-  .mobile-menu .top > p a {
-    color: red;
-  }
-
-  .mobile-menu ul {
-    background-color: black;
-    height: 60%;
-    padding-left: 0;
-  }
-
-  .mobile-menu ul li {
-    border-bottom: 1px solid grey;
-  }
-
-  .mobile-menu ul a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    padding: 10px;
-  }
-
-  .mobile-menu ul a p {
-    font-size: 0.9rem;
-  }
-
-  .mobile-menu ul a i {
-    color: red;
-    margin-right: 5px;
-  }
-
-  .mobile-menu ul a:active {
-    color: black;
-  }
-
-  .mobile-menu ul a:active i {
-    color: orange;
-  }
-}
-
-@media screen and (max-width: $sm) {
-  /* MOBILE MENU */
-  .show-menu {
-    margin-right: 0;
-  }
-
-  .mobile-menu .wrapper {
-    width: 80%;
-  }
-
-  .mobile-menu .logo img {
-    width: 50%;
+    .logo {
+      img {
+        width: 50%;
+      }
+    }
   }
 }
