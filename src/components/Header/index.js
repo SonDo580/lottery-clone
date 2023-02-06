@@ -1,4 +1,5 @@
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 import { Images } from "../../images";
 import { Screen } from "../../style/screen";
 import HeaderRight from "./components/HeaderRight";
@@ -13,9 +14,9 @@ function Header() {
   return (
     <header>
       <div className="header-left">
-        <a href="/">
+        <Link to="/">
           <img src={Images.header.onbitLogo} alt="onbit logo" />
-        </a>
+        </Link>
       </div>
 
       {toLargeScreen ? null : <HeaderRight />}
