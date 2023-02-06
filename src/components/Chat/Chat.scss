@@ -1,0 +1,81 @@
+@import "../../style/style.scss";
+
+.fixed {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  z-index: 10;
+
+  .showIcon {
+    display: none;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .zalo {
+    width: 60px;
+    height: auto;
+  }
+
+  @include desktop {
+    right: 10px;
+
+    .showIcon {
+      display: block;
+      width: 80px;
+      aspect-ratio: 1;
+      background-color: transparent;
+      border: none;
+
+      img {
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    .wrapper {
+      transition: background-color 0.2s step-end;
+
+      &.active {
+        background-color: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    .icons {
+      position: fixed;
+      bottom: 0;
+      left: 100%;
+      transition: transform 0.3s;
+
+      flex-direction: row;
+      gap: 20px;
+      width: 100vw;
+      padding: 10px 20px;
+      background-color: white;
+      border: 2px solid blue;
+
+      &.active {
+        transform: translateX(max(-70%, -400px));
+      }
+    }
+  }
+
+  @include tablet {
+    bottom: 10px;
+  }
+
+  @include mobile {
+    .showIcon {
+      width: 60px;
+    }
+  }
+}
