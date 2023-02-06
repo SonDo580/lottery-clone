@@ -1,0 +1,54 @@
+nav {
+  ul {
+    list-style: none;
+    background-color: black;
+    color: white;
+    padding-left: 0;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+
+    display: flex;
+  }
+
+  li {
+    padding: 15px 10px;
+    position: relative;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    svg {
+      font-size: 0.8rem;
+    }
+
+    .list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: black;
+      width: max-content;
+      display: none;
+
+      p {
+        margin: 0;
+        padding: 10px;
+        border-bottom: 1px solid white;
+
+        &:hover {
+          background-color: red;
+        }
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: red;
+
+      .list {
+        display: block;
+      }
+    }
+  }
+}

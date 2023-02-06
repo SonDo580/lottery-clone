@@ -1,4 +1,5 @@
 import { FaCaretDown } from "react-icons/fa";
+import "./NavBar.scss";
 
 function NavBar() {
   return (
