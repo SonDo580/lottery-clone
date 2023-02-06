@@ -1,27 +1,31 @@
 import { FaCaretDown } from "react-icons/fa";
 import "./NavBar.scss";
 
+import { Link } from "react-router-dom";
+
 function NavBar() {
+  const disabledLink = { pointerEvents: "none" };
+
   return (
     <nav>
       <ul>
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
           Play now <FaCaretDown />
           <div className="list">
             <p>
-              <a href="/">Vietlott Keno</a>
+              <Link to="/play">Vietlott Keno</Link>
             </p>
             <p>
-              <a href="/">US MegaMillions</a>
+              <Link to="/play">US MegaMillions</Link>
             </p>
             <p>
-              <a href="/">Euro Millions</a>
+              <Link to="/play">Euro Millions</Link>
             </p>
             <p>
-              <a href="/">Oz Lotto</a>
+              <Link to="/play">Oz Lotto</Link>
             </p>
           </div>
         </li>
@@ -29,27 +33,41 @@ function NavBar() {
           Result <FaCaretDown />
           <div className="list">
             <p>
-              <a href="/">Vietlott Keno</a>
+              <a href="/" style={disabledLink}>
+                Vietlott Keno
+              </a>
             </p>
             <p>
-              <a href="/">US MegaMillions</a>
+              <a href="/" style={disabledLink}>
+                US MegaMillions
+              </a>
             </p>
             <p>
-              <a href="/">Euro Millions</a>
+              <a href="/" style={disabledLink}>
+                Euro Millions
+              </a>
             </p>
             <p>
-              <a href="/">Oz Lotto</a>
+              <a href="/" style={disabledLink}>
+                Oz Lotto
+              </a>
             </p>
           </div>
         </li>
         <li>
-          <a href="/">Winners</a>
+          <a href="/" style={disabledLink}>
+            Winners
+          </a>
         </li>
         <li>
-          <a href="/">News and Events</a>
+          <a href="/" style={disabledLink}>
+            News and Events
+          </a>
         </li>
         <li>
-          <a href="/">About us</a>
+          <a href="/" style={disabledLink}>
+            About us
+          </a>
         </li>
       </ul>
     </nav>
