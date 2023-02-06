@@ -8,16 +8,23 @@ import {
   FaMoneyBill,
   FaScroll,
 } from "react-icons/fa";
+import { useState } from "react";
 
 function MobileMenu() {
+  const [show, setShow] = useState(false);
+
+  const showMobileMenu = () => {
+    setShow(true);
+  };
+
   return (
     <>
-      <div className="show-menu">
+      <div className="show-menu" onClick={showMobileMenu}>
         <span>MENU</span>
         <FaBars />
       </div>
 
-      <div className="mobile-menu">
+      <div className={`mobile-menu ${show ? "show" : ""}`}>
         <div className="wrapper">
           <div className="top">
             <div className="logo">
