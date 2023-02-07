@@ -1,8 +1,11 @@
+import { useReducer } from "react";
 import Card from "./Card";
 import "./Number.scss";
 
 function Number(props) {
   const { numTickets } = props;
+
+  const [state, dispatch] = useReducer(reducer, numTickets, getInitialState);
 
   return (
     <div className="chooseNumber">
@@ -26,5 +29,15 @@ function Number(props) {
     </div>
   );
 }
+
+function getInitialState(numTickets) {
+  const state = [];
+  for (let i = 0; i < numTickets; i++) {
+    state.push({ table1: [], table2: [] });
+  }
+  return state;
+}
+
+function reducer() {}
 
 export default Number;
