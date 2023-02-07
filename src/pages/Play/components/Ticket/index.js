@@ -1,4 +1,8 @@
-function Ticket() {
+import "./Ticket.scss";
+
+function Ticket(props) {
+  const { arrayValues, numTickets, changeNumTickets } = props;
+
   return (
     <div className="chooseTicket">
       <h2>
