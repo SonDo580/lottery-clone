@@ -1,6 +1,10 @@
 import { useDispatch } from "react-redux";
 import { ticketConstants } from "../../../../../redux/play/constants";
-import { resetTicket, selectNumber } from "../../../../../redux/play/playSlice";
+import {
+  quickSelect,
+  resetTicket,
+  selectNumber,
+} from "../../../../../redux/play/playSlice";
 import "./Card.scss";
 import Cell from "./Cell";
 
@@ -16,7 +20,13 @@ function Card(props) {
   return (
     <div className="card">
       <div className="buttons">
-        <button className="choose">Quick Select</button>
+        <button
+          className="choose"
+          onClick={() => dispatch(quickSelect(ticket.id))}
+        >
+          Quick Select
+        </button>
+
         <button
           className="reset"
           onClick={() => dispatch(resetTicket(ticket.id))}
