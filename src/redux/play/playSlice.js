@@ -79,7 +79,10 @@ const playSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(quickSelect.fulfilled, (state, action) => {
-      console.log(action);
+      let index = state.tickets.findIndex(
+        (ticket) => (ticket.id = action.payload.id)
+      );
+      state.tickets[index] = action.payload;
     });
   },
 });
