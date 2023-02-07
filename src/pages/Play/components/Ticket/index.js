@@ -10,7 +10,11 @@ function Ticket(props) {
       </h2>
       <ul>
         {arrayValues.map((value) => (
-          <li key={value} className={value === numTickets ? "active" : ""}>
+          <li
+            key={value}
+            className={value === numTickets ? "active" : ""}
+            onClick={() => changeNumTickets(value)}
+          >
             {value} {value === 1 ? "ticket" : "tickets"}
           </li>
         ))}
