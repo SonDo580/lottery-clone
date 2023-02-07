@@ -14,10 +14,8 @@ function Number(props) {
         repellendus distinctio
       </p>
       <div className="buttonsAll">
-        <button className="choose" data-function="quickPickAll">
-          Quick Select
-        </button>
-        <button className="reset" data-function="resetAll">
+        <button className="choose">Quick Select</button>
+        <button className="reset">
           <FaTrash />
         </button>
       </div>
