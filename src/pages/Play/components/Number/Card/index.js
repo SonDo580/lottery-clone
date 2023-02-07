@@ -1,3 +1,4 @@
+import { ticketConstants } from "../../../../../redux/play/constants";
 import "./Card.scss";
 import Cell from "./Cell";
 
@@ -11,26 +12,30 @@ function Card(props) {
         <button className="reset">Reset</button>
       </div>
 
-      <p>Select 5 numbers</p>
+      <p>Select {ticketConstants.table.table1.maxSelect} numbers</p>
       <div className="numTable table1">
-        {[...Array(50).keys()].map((num) => (
-          <Cell
-            key={num}
-            val={num + 1}
-            selected={ticket.table1.includes(num + 1)}
-          />
-        ))}
+        {[...Array(ticketConstants.table.table1.numsInTable).keys()].map(
+          (num) => (
+            <Cell
+              key={num}
+              val={num + 1}
+              selected={ticket.table1.includes(num + 1)}
+            />
+          )
+        )}
       </div>
 
-      <p>Select 2 numbers</p>
+      <p>Select {ticketConstants.table.table2.maxSelect} numbers</p>
       <div className="numTable table2">
-        {[...Array(12).keys()].map((num) => (
-          <Cell
-            key={num}
-            val={num + 1}
-            selected={ticket.table2.includes(num + 1)}
-          />
-        ))}
+        {[...Array(ticketConstants.table.table2.numsInTable).keys()].map(
+          (num) => (
+            <Cell
+              key={num}
+              val={num + 1}
+              selected={ticket.table2.includes(num + 1)}
+            />
+          )
+        )}
       </div>
     </div>
   );
