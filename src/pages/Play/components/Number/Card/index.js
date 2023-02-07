@@ -42,6 +42,7 @@ function Card(props) {
               key={num}
               val={num + 1}
               selected={ticket.table2.includes(num + 1)}
+              hanldeClick={() => hanldeSelect(ticket.id, "table2", num + 1)}
             />
           )
         )}
