@@ -104,6 +104,25 @@ export const quickSelect = createAsyncThunk("play/quickSelect", (ticketID) => {
   return { ticketID, ...tables };
 });
 
+export const quickSelectAll = createAsyncThunk(
+  "play/quickSelectAll",
+  (numTickets) => {
+    return [...Array(numTickets).keys()].map(() => {
+      const tables = {};
+
+      for (let key of Object.keys(ticketConstants.table)) {
+        tables[key] = getRandomNumber(
+          ticketConstants.table[key].maxSelect,
+          1,
+          ticketConstants.table[key].numsInTable
+        );
+      }
+
+      return { ...tables };
+    });
+  }
+);
+
 function getRandomNumber(quantity, min, max) {
   const arr = [];
   while (arr.length < quantity) {
