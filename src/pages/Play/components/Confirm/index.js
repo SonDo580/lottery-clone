@@ -1,8 +1,16 @@
+import { useSelector } from "react-redux";
 import { Images } from "../../../../images";
+import {
+  discountSelector,
+  priceSelector,
+  totalSelector,
+} from "../../../../redux/play/selectors";
 import "./Confirm.scss";
 
-function Confirm(props) {
-  const { price, discount } = props;
+function Confirm() {
+  const price = useSelector(priceSelector);
+  const discount = useSelector(discountSelector);
+  const total = useSelector(totalSelector);
 
   return (
     <div className="confirmAndPay">
@@ -22,7 +30,7 @@ function Confirm(props) {
           </p>
           <p className="row">
             <span className="title">Total</span>
-            <span data-name="total">${price - discount}</span>
+            <span data-name="total">${total}</span>
           </p>
         </div>
         <div className="pay">
