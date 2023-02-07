@@ -13,6 +13,7 @@
 # Technology
 
 - ReactJS
+- Redux
 - React Router
 - Sass
 
