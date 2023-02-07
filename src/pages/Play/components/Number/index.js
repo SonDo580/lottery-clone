@@ -1,5 +1,6 @@
 import { FaTrash } from "react-icons/fa";
 import Card from "./Card";
+import "./Number.scss";
 
 function Number(props) {
   const { numTickets } = props;
