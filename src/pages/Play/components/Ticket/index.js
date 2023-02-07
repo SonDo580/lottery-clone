@@ -1,10 +1,12 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ticketConstants } from "../../../../redux/play/constants";
+import { changeNumTickets } from "../../../../redux/play/playSlice";
 import { numTicketsSelector } from "../../../../redux/play/selectors";
 import "./Ticket.scss";
 
-function Ticket(props) {
-  // const { arrayValues, numTickets, changeNumTickets } = props;
+function Ticket() {
+  const dispatch = useDispatch();
+
   const numTickets = useSelector(numTicketsSelector);
 
   return (
@@ -17,7 +19,7 @@ function Ticket(props) {
           <li
             key={value}
             className={value === numTickets ? "active" : ""}
-            // onClick={() => changeNumTickets(value)}
+            onClick={() => dispatch(changeNumTickets(value))}
           >
             {value} {value === 1 ? "ticket" : "tickets"}
           </li>
