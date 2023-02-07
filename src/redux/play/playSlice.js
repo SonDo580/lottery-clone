@@ -77,16 +77,23 @@ const playSlice = createSlice({
       }
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(quickSelect.fulfilled, (state, action) => {
+      console.log(action);
+    });
+  },
 });
 
 export const quickSelect = createAsyncThunk("play/quickSelect", (ticketID) => {
-  const tables = Object.keys(ticketConstants.table).map((key) => ({
-    key: getRandomNumber(
+  const tables = {};
+
+  for (let key of Object.keys(ticketConstants.table)) {
+    tables[key] = getRandomNumber(
       ticketConstants.table[key].maxSelect,
       1,
       ticketConstants.table[key].numsInTable
-    ),
-  }));
+    );
+  }
 
   return { id: ticketID, ...tables };
 });
