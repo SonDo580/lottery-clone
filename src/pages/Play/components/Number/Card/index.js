@@ -1,4 +1,3 @@
-import { FaTrash } from "react-icons/fa";
 import "./Card.scss";
 
 function Card() {
@@ -6,9 +5,7 @@ function Card() {
     <div className="card">
       <div className="buttons">
         <button className="choose">Quick Select</button>
-        <button className="reset">
-          <FaTrash />
-        </button>
+        <button className="reset">Reset</button>
       </div>
 
       <p>Select 5 numbers</p>

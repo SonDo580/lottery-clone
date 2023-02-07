@@ -16,9 +16,7 @@ function Number(props) {
       </p>
       <div className="buttonsAll">
         <button className="choose">Quick Select</button>
-        <button className="reset">
-          <FaTrash />
-        </button>
+        <button className="reset">Reset All</button>
       </div>
 
       <div className="cards">
