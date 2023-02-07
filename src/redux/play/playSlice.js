@@ -78,15 +78,23 @@ const playSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(quickSelect.fulfilled, (state, action) => {
-      let currentTicket = state.tickets.find(
-        (ticket) => ticket.id === action.payload.ticketID
-      );
+    builder
+      .addCase(quickSelect.fulfilled, (state, action) => {
+        let currentTicket = state.tickets.find(
+          (ticket) => ticket.id === action.payload.ticketID
+        );
 
-      for (let key of Object.keys(ticketConstants.table)) {
-        currentTicket[key] = action.payload[key];
-      }
-    });
+        for (let key of Object.keys(ticketConstants.table)) {
+          currentTicket[key] = action.payload[key];
+        }
+      })
+      .addCase(quickSelectAll.fulfilled, (state, action) => {
+        for (let i = 0; i < state.tickets.length; i++) {
+          for (let key of Object.keys(ticketConstants.table)) {
+            state.tickets[i][key] = action.payload[i][key];
+          }
+        }
+      });
   },
 });
 
