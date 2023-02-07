@@ -1,4 +1,5 @@
 import { FaTrash } from "react-icons/fa";
+import "./Card.scss";
 
 function Card() {
   return (

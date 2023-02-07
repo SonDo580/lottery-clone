@@ -1,0 +1,59 @@
+.card {
+  padding: 5px;
+  background-color: #f1f1f1;
+  border: 2px solid lightgrey;
+  border-radius: 8px;
+
+  &:hover {
+    border-color: #2196f3;
+  }
+
+  &.done {
+    background-color: lightblue;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & > p {
+    text-align: center;
+  }
+
+  .numTable {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    .num {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 0.3px solid grey;
+      font-size: 0.9rem;
+
+      &:hover {
+        cursor: pointer;
+        background-color: blue;
+        color: white;
+      }
+
+      &.active {
+        background-color: #eb0000;
+        color: white;
+      }
+    }
+  }
+
+  .table1 .num {
+    background-color: white;
+    color: grey;
+  }
+
+  .table2 .num {
+    background-color: #fbdcc0;
+    color: #616161;
+  }
+}
