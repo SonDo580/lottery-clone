@@ -31,21 +31,22 @@ const playSlice = createSlice({
           (ticket) => ticket.id === ticketID
         );
 
+        const indexRemove = currentTicket[table].findIndex(
+          (number) => number === newNumber
+        );
+
+        if (indexRemove !== -1) {
+          currentTicket[table].splice(indexRemove, 1);
+          return;
+        }
+
         if (
           currentTicket[table].length === ticketConstants.table[table].maxSelect
         ) {
           return state;
         }
 
-        const indexRemove = currentTicket[table].findIndex(
-          (number) => number === newNumber
-        );
-
-        if (indexRemove === -1) {
-          currentTicket[table].push(newNumber);
-        } else {
-          currentTicket[table].splice(indexRemove, 1);
-        }
+        currentTicket[table].push(newNumber);
       },
       prepare: (ticketID, table, number) => {
         return {
