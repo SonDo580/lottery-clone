@@ -21,7 +21,7 @@ function Number() {
       </p>
 
       <div className="buttonsAll">
-        <button className="choose">Quick Select</button>
+        <button className="choose">Quick Select All</button>
         <button className="reset" onClick={() => dispatch(resetAllTickets())}>
           Reset All
         </button>
