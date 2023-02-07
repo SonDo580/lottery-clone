@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
+import { ticketConstants } from "./constants";
 
 const initialState = {
   tickets: [
@@ -31,8 +32,7 @@ const playSlice = createSlice({
         );
 
         if (
-          (action.table === "table1" && currentTicket[table].length === 5) ||
-          (action.table === "table2" && currentTicket[table].length === 2)
+          currentTicket[table].length === ticketConstants.table[table].maxSelect
         ) {
           return state;
         }
