@@ -12,7 +12,15 @@ const initialState = {
 const playSlice = createSlice({
   name: "play",
   initialState,
-  reducers: {},
+  reducers: {
+    changeNumTickets: (state, action) => {
+      state.tickets = [...Array(action.payload)].map(() => ({
+        table1: [],
+        table2: [],
+      }));
+    },
+  },
 });
 
+export const { changeNumTickets } = playSlice.actions;
 export default playSlice.reducer;
