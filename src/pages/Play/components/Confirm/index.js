@@ -1,4 +1,5 @@
 import { Images } from "../../../../images";
+import "./Confirm.scss";
 
 function Confirm() {
   return (
@@ -23,7 +24,12 @@ function Confirm() {
           </p>
         </div>
         <div className="pay">
-          <button data-function="pay">Pay</button>
+          <button
+            data-function="pay"
+            onClick={() => alert("This feature is not implemented yet!")}
+          >
+            Pay
+          </button>
           <p>* Cheaper with Onbit Coin</p>
         </div>
       </div>

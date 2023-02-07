@@ -1,0 +1,68 @@
+.confirmAndPay {
+  & > div {
+    display: flex;
+    height: 130px;
+    background-color: #dfefff;
+    border: 1px solid #badafb;
+    padding: 5px 20px;
+  }
+
+  img {
+    opacity: 0.5;
+  }
+
+  .price {
+    flex-grow: 1;
+    padding: 0 20px;
+
+    .row {
+      height: 25%;
+      margin: 0;
+      padding-top: 10px;
+      font-size: 1.1rem;
+
+      display: flex;
+      justify-content: space-between;
+
+      &:last-child {
+        border-top: 2px solid gray;
+      }
+    }
+  }
+
+  span {
+    &[data-name="discount"] {
+      color: blueviolet;
+    }
+
+    &[data-name="total"] {
+      color: red;
+      font-weight: bold;
+    }
+  }
+
+  .pay {
+    text-align: center;
+    padding: 15px 0;
+
+    p {
+      font-size: 1.2rem;
+      font-style: italic;
+      padding: 0 10%;
+    }
+
+    button[data-function="pay"] {
+      color: white;
+      background-color: orange;
+      padding: 10px 30px;
+      font-size: 1.5rem;
+      width: 80%;
+      border: none;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: darkorange;
+      }
+    }
+  }
+}
