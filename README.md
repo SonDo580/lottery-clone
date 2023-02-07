@@ -7,6 +7,8 @@
 
 - Responsive layout
 - Animation
+- Choose number of tickets
+- Select, Autoselect numbers
 
 # Technology
 
