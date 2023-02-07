@@ -1,6 +1,9 @@
 import { FaTrash } from "react-icons/fa";
+import Card from "./Card";
 
-function Number() {
+function Number(props) {
+  const { numTickets } = props;
+
   return (
     <div className="chooseNumber">
       <h2>
@@ -19,7 +22,11 @@ function Number() {
         </button>
       </div>
 
-      <div className="cards"></div>
+      <div className="cards">
+        {[...Array(numTickets).keys()].map((num) => (
+          <Card key={num} />
+        ))}
+      </div>
     </div>
   );
 }
