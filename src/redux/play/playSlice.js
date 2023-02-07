@@ -25,7 +25,7 @@ const playSlice = createSlice({
 
     selectNumber: {
       reducer: (state, action) => {
-        const { ticketID, table, number } = action.payload;
+        const { ticketID, table, newNumber } = action.payload;
 
         const currentTicket = state.tickets.find(
           (ticket) => ticket.id === ticketID
@@ -37,14 +37,22 @@ const playSlice = createSlice({
           return state;
         }
 
-        currentTicket[table].push(number);
+        const indexRemove = currentTicket[table].findIndex(
+          (number) => number === newNumber
+        );
+
+        if (indexRemove === -1) {
+          currentTicket[table].push(newNumber);
+        } else {
+          currentTicket[table].splice(indexRemove, 1);
+        }
       },
       prepare: (ticketID, table, number) => {
         return {
           payload: {
             ticketID,
             table,
-            number,
+            newNumber: number,
           },
         };
       },
