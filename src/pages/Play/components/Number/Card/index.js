@@ -21,7 +21,7 @@ function Card(props) {
     <div className="card">
       <div className="buttons">
         <button className="choose">Quick Select</button>
-        <button className="reset" onClick={handleReset}>
+        <button className="reset" onClick={() => handleReset(ticket.id)}>
           Reset
         </button>
       </div>
