@@ -1,4 +1,5 @@
 import { Images } from "../../../../images";
+import "./Mode.scss";
 
 function Mode() {
   return (
@@ -8,15 +9,15 @@ function Mode() {
       </h2>
       <ul>
         <li>
-          <label htmlFor="one">
-            <input type="radio" name="mode" id="oneTime" />
+          <label>
+            <input type="radio" name="mode" />
             Once
           </label>
         </li>
 
         <li>
-          <label htmlFor="multipleTimes">
-            <input type="radio" name="mode" id="multipleTimes" />
+          <label>
+            <input type="radio" name="mode" />
             Multiple Times
             <img src={Images.play.question} alt="question mark" />
             <p className="comment">
@@ -24,7 +25,7 @@ function Mode() {
               praesentium consequatur cum!
             </p>
           </label>
-          <select name="times" id="times">
+          <select name="times">
             <option value="0">2 times</option>
             <option value="1">4 times</option>
             <option value="2">8 times</option>
@@ -32,8 +33,8 @@ function Mode() {
         </li>
 
         <li>
-          <label htmlFor="longTerm">
-            <input type="radio" name="mode" id="longTerm" />
+          <label>
+            <input type="radio" name="mode" />
             Long Term
             <img src={Images.play.question} alt="question mark" />
             <p className="comment">
@@ -44,7 +45,7 @@ function Mode() {
               <em>*Lorem ipsum dolor sit amet consectetur adipisicing.</em>
             </p>
           </label>
-          <select name="term" id="term">
+          <select name="term">
             <option value="0">Every quarter</option>
             <option value="1">Every week</option>
             <option value="2">Every month</option>
