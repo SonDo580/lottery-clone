@@ -13,6 +13,10 @@ const arrayDiscount = [0, 3, 5, 7, 10]; // in percentages
 function Play() {
   const [numTickets, setNumTickets] = useState(arrayValues[1]);
 
+  const indexValue = arrayValues.findIndex((value) => value === numTickets);
+  const price = arrayPrice[indexValue];
+  const discount = (price * arrayDiscount[indexValue]) / 100;
+
   const changeNumTickets = (value) => {
     setNumTickets(value);
   };
@@ -31,7 +35,7 @@ function Play() {
 
       <Mode />
 
-      <Confirm />
+      <Confirm price={price} discount={discount} />
     </>
   );
 }
