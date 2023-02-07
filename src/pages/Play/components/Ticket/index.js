@@ -9,13 +9,11 @@ function Ticket(props) {
         <span>Step 1:</span> Choose number of tickets
       </h2>
       <ul>
-        <li data-num="1">1 ticket</li>
-        <li data-num="3" className="active">
-          3 tickets
-        </li>
-        <li data-num="5">5 tickets</li>
-        <li data-num="10">10 tickets</li>
-        <li data-num="15">15 tickets</li>
+        {arrayValues.map((value) => (
+          <li key={value} data-num={value}>
+            {value} {value === 1 ? "ticket" : "tickets"}
+          </li>
+        ))}
       </ul>
     </div>
   );
