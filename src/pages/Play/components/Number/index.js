@@ -21,8 +21,8 @@ function Number() {
       </div>
 
       <div className="cards">
-        {tickets.map((ticket, index) => (
-          <Card key={index} />
+        {tickets.map((ticket) => (
+          <Card key={ticket.id} ticket={ticket} />
         ))}
       </div>
     </div>
