@@ -1,9 +1,17 @@
+import { useDispatch } from "react-redux";
 import { ticketConstants } from "../../../../../redux/play/constants";
+import { selectNumber } from "../../../../../redux/play/playSlice";
 import "./Card.scss";
 import Cell from "./Cell";
 
 function Card(props) {
+  const dispatch = useDispatch();
+
   const { ticket } = props;
+
+  const hanldeSelect = (ticketID, table, number) => {
+    dispatch(selectNumber(ticketID, table, number));
+  };
 
   return (
     <div className="card">
@@ -20,6 +28,7 @@ function Card(props) {
               key={num}
               val={num + 1}
               selected={ticket.table1.includes(num + 1)}
+              hanldeClick={() => hanldeSelect(ticket.id, "table1", num + 1)}
             />
           )
         )}
