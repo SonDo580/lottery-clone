@@ -80,7 +80,7 @@ const playSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(quickSelect.fulfilled, (state, action) => {
       let currentTicket = state.tickets.find(
-        (ticket) => (ticket.id = action.payload.ticketID)
+        (ticket) => ticket.id === action.payload.ticketID
       );
 
       for (let key of Object.keys(ticketConstants.table)) {
