@@ -1,4 +1,5 @@
 import "./Card.scss";
+import Cell from "./Cell";
 
 function Card() {
   return (
@@ -11,18 +12,14 @@ function Card() {
       <p>Select 5 numbers</p>
       <div className="numTable table1">
         {[...Array(50).keys()].map((num) => (
-          <div key={num} className="num">
-            {num + 1}
-          </div>
+          <Cell key={num} val={num + 1} />
         ))}
       </div>
 
       <p>Select 2 numbers</p>
       <div className="numTable table2">
         {[...Array(12).keys()].map((num) => (
-          <div key={num} className="num">
-            {num + 1}
-          </div>
+          <Cell key={num} val={num + 1} />
         ))}
       </div>
     </div>
