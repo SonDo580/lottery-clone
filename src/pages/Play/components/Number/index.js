@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { resetAllTickets } from "../../../../redux/play/playSlice";
+import {
+  quickSelectAll,
+  resetAllTickets,
+} from "../../../../redux/play/playSlice";
 import { ticketsSelector } from "../../../../redux/play/selectors";
 import Card from "./Card";
 import "./Number.scss";
@@ -21,7 +24,13 @@ function Number() {
       </p>
 
       <div className="buttonsAll">
-        <button className="choose">Quick Select All</button>
+        <button
+          className="choose"
+          onClick={() => dispatch(quickSelectAll(tickets.length))}
+        >
+          Quick Select All
+        </button>
+
         <button className="reset" onClick={() => dispatch(resetAllTickets())}>
           Reset All
         </button>
