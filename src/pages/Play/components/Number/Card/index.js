@@ -20,33 +20,25 @@ function Card(props) {
         <button className="reset">Reset</button>
       </div>
 
-      <p>Select {ticketConstants.table.table1.maxSelect} numbers</p>
-      <div className="numTable table1">
-        {[...Array(ticketConstants.table.table1.numsInTable).keys()].map(
-          (num) => (
-            <Cell
-              key={num}
-              val={num + 1}
-              selected={ticket.table1.includes(num + 1)}
-              hanldeClick={() => hanldeSelect(ticket.id, "table1", num + 1)}
-            />
-          )
-        )}
-      </div>
-
-      <p>Select {ticketConstants.table.table2.maxSelect} numbers</p>
-      <div className="numTable table2">
-        {[...Array(ticketConstants.table.table2.numsInTable).keys()].map(
-          (num) => (
-            <Cell
-              key={num}
-              val={num + 1}
-              selected={ticket.table2.includes(num + 1)}
-              hanldeClick={() => hanldeSelect(ticket.id, "table2", num + 1)}
-            />
-          )
-        )}
-      </div>
+      {Object.keys(ticketConstants.table).map((key) => {
+        return (
+          <>
+            <p>Select {ticketConstants.table[key].maxSelect} numbers</p>
+            <div className={`numTable ${key}`}>
+              {[...Array(ticketConstants.table[key].numsInTable).keys()].map(
+                (num) => (
+                  <Cell
+                    key={num}
+                    val={num + 1}
+                    selected={ticket[key].includes(num + 1)}
+                    hanldeClick={() => hanldeSelect(ticket.id, key, num + 1)}
+                  />
+                )
+              )}
+            </div>
+          </>
+        );
+      })}
     </div>
   );
 }
