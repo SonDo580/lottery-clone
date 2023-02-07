@@ -4,6 +4,7 @@ import Lottery from "./components/Lottery";
 import Mode from "./components/Mode";
 import Number from "./components/Number";
 import Ticket from "./components/Ticket";
+import "./Play.scss";
 
 const arrayValues = [1, 3, 5, 10, 15];
 
