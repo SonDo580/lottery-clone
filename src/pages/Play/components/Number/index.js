@@ -1,11 +1,10 @@
-import { useReducer } from "react";
+import { useSelector } from "react-redux";
+import { ticketsSelector } from "../../../../redux/play/selectors";
 import Card from "./Card";
 import "./Number.scss";
 
-function Number(props) {
-  const { numTickets } = props;
-
-  const [state, dispatch] = useReducer(reducer, numTickets, getInitialState);
+function Number() {
+  const tickets = useSelector(ticketsSelector);
 
   return (
     <div className="chooseNumber">
@@ -22,22 +21,12 @@ function Number(props) {
       </div>
 
       <div className="cards">
-        {[...Array(numTickets).keys()].map((num) => (
-          <Card key={num} id={num} selectedNums={state[num]} />
+        {tickets.map((ticket, index) => (
+          <Card key={index} />
         ))}
       </div>
     </div>
   );
 }
-
-function getInitialState(numTickets) {
-  const state = [];
-  for (let i = 0; i < numTickets; i++) {
-    state.push({ table1: [], table2: [] });
-  }
-  return state;
-}
-
-function reducer() {}
 
 export default Number;
