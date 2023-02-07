@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { ticketConstants } from "../../../../../redux/play/constants";
-import { selectNumber } from "../../../../../redux/play/playSlice";
+import { resetTicket, selectNumber } from "../../../../../redux/play/playSlice";
 import "./Card.scss";
 import Cell from "./Cell";
 
@@ -13,16 +13,22 @@ function Card(props) {
     dispatch(selectNumber(ticketID, table, number));
   };
 
+  const handleReset = (ticketID) => {
+    dispatch(resetTicket(ticketID));
+  };
+
   return (
     <div className="card">
       <div className="buttons">
         <button className="choose">Quick Select</button>
-        <button className="reset">Reset</button>
+        <button className="reset" onClick={handleReset}>
+          Reset
+        </button>
       </div>
 
       {Object.keys(ticketConstants.table).map((key) => {
         return (
-          <>
+          <div key={key}>
             <p>Select {ticketConstants.table[key].maxSelect} numbers</p>
             <div className={`numTable ${key}`}>
               {[...Array(ticketConstants.table[key].numsInTable).keys()].map(
@@ -36,7 +42,7 @@ function Card(props) {
                 )
               )}
             </div>
-          </>
+          </div>
         );
       })}
     </div>
