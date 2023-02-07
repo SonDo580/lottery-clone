@@ -1,10 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [
-  { table1: [], table2: [] },
-  { table1: [], table2: [] },
-  { table1: [], table2: [] },
-];
+const initialState = {
+  tickets: [
+    { table1: [], table2: [] },
+    { table1: [], table2: [] },
+    { table1: [], table2: [] },
+  ],
+  mode: "", // not implemented
+};
 
 const playSlice = createSlice({
   name: "play",
