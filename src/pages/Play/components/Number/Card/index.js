@@ -13,15 +13,14 @@ function Card(props) {
     dispatch(selectNumber(ticketID, table, number));
   };
 
-  const handleReset = (ticketID) => {
-    dispatch(resetTicket(ticketID));
-  };
-
   return (
     <div className="card">
       <div className="buttons">
         <button className="choose">Quick Select</button>
-        <button className="reset" onClick={() => handleReset(ticket.id)}>
+        <button
+          className="reset"
+          onClick={() => dispatch(resetTicket(ticket.id))}
+        >
           Reset
         </button>
       </div>
