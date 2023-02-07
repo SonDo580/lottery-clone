@@ -23,7 +23,7 @@ function Number(props) {
 
       <div className="cards">
         {[...Array(numTickets).keys()].map((num) => (
-          <Card key={num} />
+          <Card key={num} id={num} selectedNums={state[num]} />
         ))}
       </div>
     </div>
