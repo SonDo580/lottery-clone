@@ -10,7 +10,7 @@ function Ticket(props) {
       </h2>
       <ul>
         {arrayValues.map((value) => (
-          <li key={value} data-num={value}>
+          <li key={value} className={value === numTickets ? "active" : ""}>
             {value} {value === 1 ? "ticket" : "tickets"}
           </li>
         ))}
