@@ -21,8 +21,36 @@ const playSlice = createSlice({
         table2: [],
       }));
     },
+
+    selectNumber: {
+      reducer: (state, action) => {
+        const { ticketID, table, number } = action.payload;
+
+        const currentTicket = state.tickets.find(
+          (ticket) => ticket.id === ticketID
+        );
+
+        if (
+          (action.table === "table1" && currentTicket[table].length === 5) ||
+          (action.table === "table2" && currentTicket[table].length === 2)
+        ) {
+          return state;
+        }
+
+        currentTicket[table].push(number);
+      },
+      prepare: (ticketID, table, number) => {
+        return {
+          payload: {
+            ticketID,
+            table,
+            number,
+          },
+        };
+      },
+    },
   },
 });
 
-export const { changeNumTickets } = playSlice.actions;
+export const { changeNumTickets, selectNumber } = playSlice.actions;
 export default playSlice.reducer;
