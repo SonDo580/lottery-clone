@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 import { ticketConstants } from "./constants";
 
@@ -77,6 +77,18 @@ const playSlice = createSlice({
       }
     },
   },
+});
+
+export const quickSelect = createAsyncThunk("play/quickSelect", (ticketID) => {
+  const tables = Object.keys(ticketConstants.table).map((key) => ({
+    key: getRandomNumber(
+      ticketConstants.table[key].maxSelect,
+      1,
+      ticketConstants.table[key].numsInTable
+    ),
+  }));
+
+  return { id: ticketID, ...tables };
 });
 
 function getRandomNumber(quantity, min, max) {
