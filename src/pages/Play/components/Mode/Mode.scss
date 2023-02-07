@@ -1,3 +1,5 @@
+@import "../../../../style/style.scss";
+
 .chooseMode ul {
   list-style: none;
   padding-left: 0;
@@ -83,5 +85,31 @@
     margin-top: 5px;
     margin-bottom: 0;
     font-size: 1.05rem;
+  }
+
+  @include mobile {
+    li {
+      padding: 5px 5px;
+      font-size: 1rem;
+    }
+
+    input[type="radio"] {
+      width: 20px;
+      height: 20px;
+    }
+
+    label img {
+      width: 18px;
+      height: 18px;
+      margin-left: 5px;
+    }
+
+    select {
+      font-size: 1rem;
+    }
+
+    .note {
+      display: none;
+    }
   }
 }

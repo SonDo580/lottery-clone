@@ -1,3 +1,5 @@
+@import "../../../../style/style.scss";
+
 .lottery {
   display: flex;
   justify-content: space-between;
@@ -32,5 +34,27 @@
     color: red;
     font-size: 2.2rem;
     padding-right: 10px;
+  }
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 40px 40px;
+
+    .img {
+      grid-row: 1 / -1;
+    }
+
+    .time {
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .prize {
+      text-align: center;
+      font-size: 1.3rem;
+      padding-right: 0;
+      margin-top: 0;
+    }
   }
 }
