@@ -1,7 +1,7 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { ticketConstants } from "./constants";
 
-export const ticketsSelector = (state) => state.play;
+export const ticketsSelector = (state) => state.play.tickets;
 
 export const numTicketsSelector = createSelector(
   ticketsSelector,
