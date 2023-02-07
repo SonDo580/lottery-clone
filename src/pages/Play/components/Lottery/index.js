@@ -1,4 +1,5 @@
 import { Images } from "../../../../images";
+import "./Lottery.scss";
 
 function Lottery() {
   return (

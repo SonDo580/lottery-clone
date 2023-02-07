@@ -1,0 +1,36 @@
+.lottery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 80px;
+  background-color: #f9cc4b;
+
+  & > * {
+    flex-grow: 1;
+  }
+
+  .img {
+    text-align: center;
+  }
+
+  img {
+    height: 80px;
+  }
+
+  .time {
+    font-size: 1.3rem;
+
+    span {
+      color: blueviolet;
+      font-weight: bold;
+    }
+  }
+
+  .prize {
+    text-align: right;
+    color: red;
+    font-size: 2.2rem;
+    padding-right: 10px;
+  }
+}
