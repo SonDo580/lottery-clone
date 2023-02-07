@@ -1,4 +1,3 @@
-import { FaTrash } from "react-icons/fa";
 import Card from "./Card";
 import "./Number.scss";
 
