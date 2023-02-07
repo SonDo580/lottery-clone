@@ -15,7 +15,7 @@ function Play() {
   return (
     <>
       <Lottery />
-      <Ticket changeNumTickets={changeNumTickets} />
+      <Ticket numTickets={numTickets} changeNumTickets={changeNumTickets} />
       <Number numTickets={numTickets} />
       <Mode />
       <Confirm />
