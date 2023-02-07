@@ -79,6 +79,18 @@ const playSlice = createSlice({
   },
 });
 
+function getRandomNumber(quantity, min, max) {
+  const arr = [];
+  while (arr.length < quantity) {
+    const num = Math.floor(min + (max - min + 1) * Math.random());
+
+    if (!arr.includes(num)) {
+      arr.push(num);
+    }
+  }
+  return arr;
+}
+
 export const { changeNumTickets, selectNumber, resetTicket, resetAllTickets } =
   playSlice.actions;
 export default playSlice.reducer;
