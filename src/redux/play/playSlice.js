@@ -79,10 +79,13 @@ const playSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(quickSelect.fulfilled, (state, action) => {
-      let index = state.tickets.findIndex(
-        (ticket) => (ticket.id = action.payload.id)
+      let currentTicket = state.tickets.find(
+        (ticket) => (ticket.id = action.payload.ticketID)
       );
-      state.tickets[index] = action.payload;
+
+      for (let key of Object.keys(ticketConstants.table)) {
+        currentTicket[key] = action.payload[key];
+      }
     });
   },
 });
@@ -98,7 +101,7 @@ export const quickSelect = createAsyncThunk("play/quickSelect", (ticketID) => {
     );
   }
 
-  return { id: ticketID, ...tables };
+  return { ticketID, ...tables };
 });
 
 function getRandomNumber(quantity, min, max) {
