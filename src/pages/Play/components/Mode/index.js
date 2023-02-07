@@ -8,14 +8,14 @@ function Mode() {
       </h2>
       <ul>
         <li>
-          <label for="one">
-            <input type="radio" name="mode" id="oneTime" checked />
+          <label htmlFor="one">
+            <input type="radio" name="mode" id="oneTime" />
             Once
           </label>
         </li>
 
         <li>
-          <label for="multipleTimes">
+          <label htmlFor="multipleTimes">
             <input type="radio" name="mode" id="multipleTimes" />
             Multiple Times
             <img src={Images.play.question} alt="question mark" />
@@ -32,7 +32,7 @@ function Mode() {
         </li>
 
         <li>
-          <label for="longTerm">
+          <label htmlFor="longTerm">
             <input type="radio" name="mode" id="longTerm" />
             Long Term
             <img src={Images.play.question} alt="question mark" />
