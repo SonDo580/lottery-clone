@@ -1,7 +1,9 @@
 import "./Card.scss";
 import Cell from "./Cell";
 
-function Card() {
+function Card(props) {
+  const { ticket } = props;
+
   return (
     <div className="card">
       <div className="buttons">
@@ -12,14 +14,22 @@ function Card() {
       <p>Select 5 numbers</p>
       <div className="numTable table1">
         {[...Array(50).keys()].map((num) => (
-          <Cell key={num} val={num + 1} />
+          <Cell
+            key={num}
+            val={num + 1}
+            selected={ticket.table1.includes(num + 1)}
+          />
         ))}
       </div>
 
       <p>Select 2 numbers</p>
       <div className="numTable table2">
         {[...Array(12).keys()].map((num) => (
-          <Cell key={num} val={num + 1} />
+          <Cell
+            key={num}
+            val={num + 1}
+            selected={ticket.table2.includes(num + 1)}
+          />
         ))}
       </div>
     </div>
