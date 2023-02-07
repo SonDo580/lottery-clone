@@ -1,7 +1,9 @@
 import { Images } from "../../../../images";
 import "./Confirm.scss";
 
-function Confirm() {
+function Confirm(props) {
+  const { price, discount } = props;
+
   return (
     <div className="confirmAndPay">
       <h2>
@@ -12,15 +14,15 @@ function Confirm() {
         <div className="price">
           <p className="row">
             <span className="title">Price</span>
-            <span data-name="price"></span>
+            <span data-name="price">${price}</span>
           </p>
           <p className="row">
             <span className="title">Discount</span>
-            <span data-name="discount"></span>
+            <span data-name="discount">${discount}</span>
           </p>
           <p className="row">
             <span className="title">Total</span>
-            <span data-name="total"></span>
+            <span data-name="total">${price - discount}</span>
           </p>
         </div>
         <div className="pay">
