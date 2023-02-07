@@ -6,7 +6,9 @@ import Number from "./components/Number";
 import Ticket from "./components/Ticket";
 import "./Play.scss";
 
-const arrayValues = [1, 3, 5, 10, 15];
+const arrayValues = [1, 3, 5, 10, 15]; // number of tickets
+const arrayPrice = arrayValues.map((value) => value * 5); // in dollars
+const arrayDiscount = [0, 3, 5, 7, 10]; // in percentages
 
 function Play() {
   const [numTickets, setNumTickets] = useState(arrayValues[1]);
