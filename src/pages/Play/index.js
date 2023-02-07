@@ -5,8 +5,10 @@ import Mode from "./components/Mode";
 import Number from "./components/Number";
 import Ticket from "./components/Ticket";
 
+const arrayValues = [1, 3, 5, 10, 15];
+
 function Play() {
-  const [numTickets, setNumTickets] = useState(3);
+  const [numTickets, setNumTickets] = useState(arrayValues[1]);
 
   const changeNumTickets = (value) => {
     setNumTickets(value);
@@ -15,9 +17,17 @@ function Play() {
   return (
     <>
       <Lottery />
-      <Ticket numTickets={numTickets} changeNumTickets={changeNumTickets} />
+
+      <Ticket
+        arrayValues={arrayValues}
+        numTickets={numTickets}
+        changeNumTickets={changeNumTickets}
+      />
+
       <Number numTickets={numTickets} />
+
       <Mode />
+
       <Confirm />
     </>
   );
