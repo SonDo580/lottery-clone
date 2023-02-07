@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
 
 const initialState = {
   tickets: [
-    { table1: [], table2: [] },
-    { table1: [], table2: [] },
-    { table1: [], table2: [] },
+    { id: uuidv4(), table1: [], table2: [] },
+    { id: uuidv4(), table1: [], table2: [] },
+    { id: uuidv4(), table1: [], table2: [] },
   ],
   mode: "", // not implemented
 };
@@ -15,6 +16,7 @@ const playSlice = createSlice({
   reducers: {
     changeNumTickets: (state, action) => {
       state.tickets = [...Array(action.payload)].map(() => ({
+        id: uuidv4(),
         table1: [],
         table2: [],
       }));
