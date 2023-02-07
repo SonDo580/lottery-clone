@@ -58,8 +58,19 @@ const playSlice = createSlice({
         };
       },
     },
+
+    resetTicket: (state, action) => {
+      const currentTicket = state.tickets.find(
+        (ticket) => ticket.id === action.payload
+      );
+
+      for (let key of Object.keys(ticketConstants.table)) {
+        currentTicket[key] = [];
+      }
+    },
   },
 });
 
-export const { changeNumTickets, selectNumber } = playSlice.actions;
+export const { changeNumTickets, selectNumber, resetTicket } =
+  playSlice.actions;
 export default playSlice.reducer;
